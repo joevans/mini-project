@@ -6,9 +6,37 @@
 	<title>Mini Project</title>
 </head>
 <body>
-	<header>header</header>
-	<main>content</main>
-	<footer>footer</footer>
+	<header class="header content-width">
+		<nav class="header__nav">
+			<a href="/" class="header__nav__logo">
+				<span>logo</span>
+			</a>
+			<a class="header__nav__link header__nav__link--active" href="">About</a>
+			<a class="header__nav__link" href="">Help</a>
+			<a class="header__nav__link" href="">Features</a>
+			<a class="header__nav__link" href="">Signup</a>
+		</nav>
+		<a href="" class="header__button">
+			Request Demo
+			<svg class="header__button__arrow" width="22" height="16" viewBox="0 0 22 16" fill="none">
+				<path d="M15 15L21 8L15 1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M21 8H1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
+	</header>
+
+	<main class="main content-width">
+		<section class="main__section">
+			<h1 class="main__section__title">Save your data storage here.</h1>
+			<p>Data Warehouse is a data storage area that has been tested for security, so you can store your data here safely but not be afraid of being stolen by others.</p>
+			<a class="main__section__button button--purple" href="">Learn more</a>
+		</section>
+	</main>
+	
+	<footer class="footer content-width">
+		footer
+	</footer>
+
 
 	<script type="text/javascript" src="./dist/main.js"></script>
 </body>
