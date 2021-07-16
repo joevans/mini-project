@@ -4,12 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mini Project</title>
+	<!-- Prevent HTML Blinking -->
+	<style type="text/css">body{opacity:0;}</style>
 </head>
 <body>
-	<header class="header content-width">
+	<header class="header content-width flex flex--center">
 		<nav class="header__nav">
-			<a href="/" class="header__nav__logo">
-				<span>logo</span>
+			<a href="/" class="header__nav__logo flex">
+				<span>mini project seo friendly logo name</span>
 			</a>
 			<a class="header__nav__link header__nav__link--active" href="">About</a>
 			<a class="header__nav__link" href="">Help</a>
@@ -26,10 +28,15 @@
 	</header>
 
 	<main class="main content-width">
-		<section class="main__section">
-			<h1 class="main__section__title">Save your data storage here.</h1>
-			<p>Data Warehouse is a data storage area that has been tested for security, so you can store your data here safely but not be afraid of being stolen by others.</p>
-			<a class="main__section__button button--purple" href="">Learn more</a>
+		<section class="main__section main__section__first flex flex--center">
+			<div class="main__section__first--left">
+				<h1 class="main__section__title main__section__first__title">Save your data storage here.</h1>
+				<p class="main__section__first__paragraph">Data Warehouse is a data storage area that has been tested for security, so you can store your data here safely but not be afraid of being stolen by others.</p>
+				<a class="main__section__button main__section__first__button button--purple" href="">Learn more</a>
+			</div>
+			<div class="main__section__first--right flex--relative">
+				<img class="main__section__image main__section__first__image" src="./src/images/first-section_image.png">
+			</div>
 		</section>
 	</main>
 	
@@ -39,5 +46,7 @@
 
 
 	<script type="text/javascript" src="./dist/main.js"></script>
+	<!-- Prevent HTML Blinking -->
+	<style type="text/css">body{opacity:1;}</style>
 </body>
 </html>

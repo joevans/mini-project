@@ -1,14 +1,3 @@
-$pink: #F063B8;
-$purple: #9C69E2;
-$light-gray: #4B5D68;
-$dark-gray: #212353;
-
-$body-background: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%);
-
-$button-background: #FFF;
-$button-shadow: rgba(75, 93, 104, 0.1);
-
-
 /**
 ***  RESETS
 **/
@@ -17,12 +6,8 @@ html, body{
 	height: 100vh;
 }
 
-body{
-	line-height: 28.8px;
-	font-size: 18px;
-	font-family: Avenir;
-	font-weight: 500;
-	background-color: $body-background;
+h1, h2, h3, h4, h5{
+	margin:0;
 }
 
 a{
@@ -33,28 +18,71 @@ a{
 /**
 ***  COLORS
 **/
+$pink: #F063B8;
+$purple: #9C69E2;
+$light-gray: #4B5D68;
+$dark-gray: #212353;
+
+$body-background: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%);
+
+$button-background-white: #FFF;
+$button-shadow: rgba(75, 93, 104, 0.1);
+
+
+/**
+***  SETTING COLORS
+**/
+body{
+	background: $body-background;
+	color: $light-gray;
+}
 .button--purple{
 	background-color: $purple;
+	color: white;
 }
 
 
 /**
-***  STRUCTURE
+***  FONTS
+**/
+body{
+	line-height: 160%;
+	font-size: 18px;
+	font-family: Avenir;
+	font-weight: 500;
+}
+
+
+/**
+***  STRUCTURE & MIXINS
 **/
 .content-width{
 	width: 100%;
 	max-width: 1100px;
 	margin:auto;
 }
+.flex{
+	display: flex;
+
+	&--center{
+		align-items: center;
+	}
+
+	&--half-width > *{
+		width: 50%;
+	}
+
+	&--relative{
+		position: relative;
+	}
+}
 
 
 /**
-***  PAGE CONTENT
+***  PAGE CONTENT: HEADER
 **/
 .header{
 	padding: 47px 0;
-	display: flex;
-	align-items: center;
 	justify-content: space-between;
 
 	&__nav{
@@ -63,10 +91,10 @@ a{
 		grid-gap: 20px;
 
 		&__logo{
-			display: flex;
 			align-items: flex-end;
 			grid-gap: 9px;
-			width:100px;
+			margin-right: 120px;
+			width: 49px;
 
 			&:before, &:after{
 				content: "";
@@ -105,7 +133,7 @@ a{
 
 	&__button{
 		padding: 17px 29px;
-		background: $button-background;
+		background: $button-background-white;
 		box-shadow: 0px 5px 5px $button-shadow;
 		border-radius: 50px;
 		display: inline-block;
@@ -113,6 +141,7 @@ a{
 		&__arrow{
 			margin-left: 20px;
 			position:relative;
+			vertical-align: middle;
 		}
 
 		&:hover &__arrow{
@@ -125,9 +154,14 @@ a{
 	}
 }
 
+
+/**
+***  PAGE CONTENT: MAIN
+**/
 .main{
 
 	&__section{
+		padding: 100px 0;
 
 		&__title{
 			font-family: Helvetica;
@@ -136,5 +170,55 @@ a{
 			line-height: 110%;
 			color: $dark-gray;
 		}
+
+		&__button{
+			display: inline-block;
+			padding: 16px 37px;
+			font-weight: 800;
+			border-radius: 50px;
+		}
+
+		&__image{
+			width:100%;
+		}
+
+
+		/* Individual Sections */
+		&__first{
+			padding: 83px 0 100px;
+
+			&--left{
+				width:53%;
+			}
+
+			&--right{
+				width:47%;
+			}
+
+			&__title, &__paragraph{
+				margin-bottom: 50px;
+			}
+
+			&__paragraph{
+				width: 100%;
+				max-width: 380px;
+			}
+
+			&__image{
+				position: relative;
+				top: 100px;
+				left: -35%;
+				width: 885px;
+				z-index: -1;
+			}
+		}
 	}
+}
+
+
+/**
+***  PAGE CONTENT: FOOTER
+**/
+.footer{
+
 }
