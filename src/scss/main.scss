@@ -22,6 +22,7 @@ a{
 /**
 ***  COLORS
 **/
+$white: #FFF;
 $pink: #F063B8;
 $purple: #9C69E2;
 $light-gray: #4B5D68;
@@ -33,6 +34,10 @@ $body-background: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%);
 $button-background-white: #FFF;
 $button-shadow: rgba(75, 93, 104, 0.1);
 
+$testimonial-shadow: rgba(88, 36, 160, 0.1);
+$testimonial-shadow-active: rgba(88, 36, 160, 0.3);
+$testimonial-overlay-background: linear-gradient(-90deg, #9c69e2, transparent);
+
 
 /**
 ***  SETTING COLORS
@@ -40,6 +45,9 @@ $button-shadow: rgba(75, 93, 104, 0.1);
 body{
 	background: $body-background;
 	color: $light-gray;
+}
+.background-white{
+	background: $white;
 }
 .background-light-pink{
 	background: $light-pink;
@@ -49,8 +57,15 @@ body{
 	background-color: $purple;
 	color: white;
 }
+.button--pink{
+	background-color: $pink;
+	color: white;
+}
 .dark-gray-text{
 	color: $dark-gray;
+}
+.purple-text{
+	color: $purple;
 }
 
 
@@ -268,15 +283,6 @@ h3{
 			}
 		}
 
-		&__four{
-			padding: 109px 93px 0 60px;
-			border-radius: 50px;
-
-			&__title{
-				color: white;
-			}
-		}
-
 
 		/* Features */
 		&__features{
@@ -359,7 +365,100 @@ h3{
 				}
 			}
 		}
+
+		&__four{
+			padding: 109px 93px 60px;
+			border-radius: 50px;
+			overflow:hidden;
+			position: relative;
+
+			&__title{
+				color: white;
+			}
+		}
+
+		/* Testimonials */
+		&__testimonials{
+			grid-gap: 20px;
+			width: 200%;
+
+			&__overlay{
+				position: absolute;
+				width: 250px;
+				height: 50%;
+				background: $testimonial-overlay-background;
+				z-index: 1;
+				right: 0;
+			}
+
+			&__article{
+				padding: 80px 70px 70px;
+				color: black;
+				box-shadow: 0px 20px 0px $testimonial-shadow;
+				border-radius: 20px;
+				margin-bottom: 20px;
+				width: 28%;
+				grid-gap: 30px;
+
+				&--active{
+					box-shadow: 0px 20px 0px $testimonial-shadow-active;
+				}
+
+				&__name{
+					display: block;
+				}
+
+				&__image{
+					position: relative;
+					top: -10px;
+				}
+			}
+		}
+
+		&__testimonial-nav{
+			float:right;
+		}
+
+		&__testimonial-dots{
+			margin-top: 60px;
+			grid-gap: 10px;
+			position: relative;
+			z-index: 2;
+
+			&__item{
+				width: 5px;
+				height: 5px;
+				background: $white;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: width .25s, height .25s;
+
+				&:hover,
+				&--active{
+					width: 10px;
+					height: 10px;
+					background-color: $pink;
+					cursor: default;
+				}
+			}
+		}
+
+		&__testimonial-nav{
+			margin-top: 60px;
+			grid-gap: 20px;
+			margin: 40px 0 100px;
+
+			&__arrow{
+				cursor: pointer;
+			}
+		}
 	}
+}
+
+.divider--purple{
+	height: 2px;
+	border: 0;
+	opacity: .2;
 }
 
 

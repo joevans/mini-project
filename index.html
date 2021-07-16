@@ -168,23 +168,70 @@
 		<!-- Section four -->
 		<section class="main__section main__section__four background-purple">
 			<h2 class="main__section__title main__section__four__title main__section--bottom-seperation">Testimonials</h2>
-			<div class="main__section__testimonials">
-				<article>
+			<div class="main__section__testimonials__overlay"></div>
+			<div class="main__section__testimonials flex">
+				<article class="main__section__testimonials__article main__section__testimonials__article--active background-white flex">
 					<div>
-						<img src="">
+						<img class="main__section__testimonials__article__image" src="./src/images/testimonial-one.png">
 					</div>
 					<div>
-						<h5>John Fang</h5>
-						<a href="">wordfaang.com</a>
-						<p>Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.</p>
+						<strong class="main__section__testimonials__article__name">John Fang</strong>
+						<span class="main__section__testimonials__article__span small-text purple-text">wordfaang.com</span>
+						<p class="main__section__testimonials__article__description">Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.</p>
+					</div>
+				</article>
+
+				<article class="main__section__testimonials__article background-white flex">
+					<div>
+						<img class="main__section__testimonials__article__image" src="./src/images/testimonial-two.png">
+					</div>
+					<div>
+						<strong class="main__section__testimonials__article__name">Jeny Doe</strong>
+						<span class="main__section__testimonials__article__span small-text purple-text">UX Engineer</span>
+						<p class="main__section__testimonials__article__description">Suspendisse ultrices at diam lectus nullam. Nisl, sagittis viverra enim erat tortor ultricies massa turpis. Arcu pulvinar aenean nam laoreet nulla.</p>
 					</div>
 				</article>
 			</div>
+			<div class="main__section__testimonial-nav flex flex--center">
+				<div class="main__section__testimonial-nav__arrow">
+					<svg width="42" height="16" viewBox="0 0 42 16" fill="none">
+						<path d="M7 1L1 8L7 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M0.999998 8L41 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div class="main__section__testimonial-nav__arrow">
+					<svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+						<g opacity="0.5">
+							<path d="M15 15L21 8L15 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M21 8H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</g>
+					</svg>
+				</div>
+			</div>
+			<div class="main__section__testimonial-dots flex flex--center">
+				<i class="main__section__testimonial-dots__item main__section__testimonial-dots__item--active background-white"></i>
+				<i class="main__section__testimonial-dots__item background-white"></i>
+				<i class="main__section__testimonial-dots__item background-white"></i>
+				<i class="main__section__testimonial-dots__item background-white"></i>
+			</div>
 		</section>
 	</main>
+
+	<hr class="divider--purple background-purple">
 	
 	<footer class="footer content-width">
-		footer
+		<div>
+			<h2>Try for free!</h2>
+			<p>Get limited 1 week free try our features!</p>
+		</div>
+		<a class="main__section__button main__section__one__button button--pink" href="">Learn more</a>
+		<a href="" class="header__button">
+			Request Demo
+			<svg class="header__button__arrow" width="22" height="16" viewBox="0 0 22 16" fill="none">
+				<path d="M15 15L21 8L15 1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M21 8H1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</a>
 	</footer>
 
 
