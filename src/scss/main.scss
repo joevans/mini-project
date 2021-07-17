@@ -22,9 +22,8 @@ a{
 $white: #FFF;
 $pink: #F063B8;
 $purple: #9C69E2;
-$deep-blue: #212353;
 $light-gray: #4B5D68;
-$dark-gray: #212353;
+$deep-blue: #212353;
 $light-pink: rgba(240, 99, 184, 0.15);
 
 $body-background: linear-gradient(180deg, #F6FAFD 0%, #FFFFFF 19.4%);
@@ -40,6 +39,10 @@ $testimonial-overlay-background: linear-gradient(-90deg, #9c69e2, transparent);
 /**
 ***  SETTING COLORS
 **/
+@mixin transition($style, $timer, $timing: ease-out){
+	transition: $style $timer $timing;
+}
+
 body{
 	background: $body-background;
 	color: $light-gray;
@@ -48,28 +51,26 @@ body{
 .background-white{
 	background: $white;
 }
+.background-pink{
+	@include transition(background-color, .25s);
+	background-color: $pink;
+	color: white;
+}
 .background-light-pink{
 	background: $light-pink;
 }
-.background-purple,
-.button--purple{
+.background-purple{
+	@include transition(background-color, .25s);
 	background-color: $purple;
 	color: white;
 }
 .background-deep-blue{
+	@include transition(background-color, .25s);
 	background-color: $deep-blue;
-	transition: background-color .25s;
-}
-.background-deep-blue:hover{
-	background-color: $pink;
-}
-.button--pink{
-	background-color: $pink;
-	color: white;
 }
 /* Texts */
-.dark-gray-text{
-	color: $dark-gray;
+.deep-blue-text{
+	color: $deep-blue;
 }
 .deep-blue-text{
 	color: $deep-blue;
@@ -80,57 +81,76 @@ body{
 .gray-text{
 	color: $light-gray;
 }
+a.gray-text{
+	@include transition(color, .25s);
+}
+/* Hovers */
+.background-deep-blue:hover{
+	background-color: $pink;
+}
+a.background-purple:hover{
+	background-color: $pink;
+}
+a.background-pink:hover{
+	background-color: $purple;
+}
 a.gray-text:hover{
-	color: $dark-gray;
+	color: $pink;
 }
 
 
 /**
 ***  FONTS
 **/
+@mixin fonts($size: 0, $weight: 0, $height: 0){
+	@if $size != 0 {
+		font-size: $size;
+	}
+	@if $weight != 0 {
+		font-weight: $weight;
+	}
+	@if $height != 0 {
+		line-height: $height;
+	}
+}
+
 body{
-	line-height: 160%;
-	font-size: 18px;
+	@include fonts(18px, 400, 160%);
 	font-family: Avenir;
-	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 }
 h1,
 h2,
 h3{
 	font-family: Helvetica;
-	font-weight: 700;
+	@include fonts(0, 700);
 }
 h1{
-	font-size: 80px;
-	line-height: 110%;
+	@include fonts(80px, 0, 110%);
 }
 h2{
-	font-size: 40px;
-	line-height: 130%;
+	@include fonts(40px, 0, 130%);
 }
 h3{
-	font-size: 24px;
-	line-height: 130%;
-	font-weight: 400;
+	@include fonts(24px, 400, 130%);
 }
 .small-text{
-	font-size: 16px;
-	line-height: 160%;
+	@include fonts(16px, 0, 160%);
+}
+.button--shadow{
+	@include fonts(0, 800);
 }
 .logo-text{
+	@include fonts(20px, 800, 160%);
 	font-family: Avenir;
-	font-weight: 800;
-	font-size: 20px;
-	line-height: 160%;
 }
 .medium-text{
-	font-weight: 500;
+	@include fonts(0, 500);
 }
 
 
 /**
-***  STRUCTURE & MIXINS
+***  STRUCTURE
 **/
 .content-width{
 	width: 100%;
@@ -169,9 +189,6 @@ h3{
 		margin-left: 20px;
 		position:relative;
 		vertical-align: middle;
-	}
-
-	&:hover &__arrow{
 		animation: arrowBounce 3s ease-out infinite;
 		@keyframes arrowBounce{
 			0%, 25%{left: 0px;}
@@ -198,6 +215,11 @@ h3{
 
 	&:before{
 		background-color: $purple;
+		animation: logoBounce 4s cubic-bezier(0.45, -0.78, 0.88, 2.24) infinite;
+		@keyframes logoBounce{
+			0%, 15%{transform: translate(0, 0);}
+			10%{transform: translate(0, -15px);}
+		}
 	}
 
 	&:after{
@@ -217,12 +239,16 @@ h3{
 .header{
 	padding: 47px 0;
 	justify-content: space-between;
+	animation: slideDownNav .5s ease-out;
+	@keyframes slideDownNav{
+		from{ transform:translate(0,-100%); }
+	}
 
 	&__nav{
-		grid-gap: 20px;
+		grid-gap: 40px;
 
 		&__logo{
-			margin-right: 120px;
+			margin-right: 90px;
 		}
 
 		&__link{
@@ -230,7 +256,7 @@ h3{
 
 			&:hover,
 			&--active{
-				color: $dark-gray;
+				color: $deep-blue;
 				font-weight: 800;
 			}
 		}
@@ -246,9 +272,10 @@ h3{
 	&__section{
 		margin: 0 0 100px;
 		padding: 50px 0;
-
-		&__title{
-			color: $dark-gray;
+		animation: fadeContent 1s ease-out;
+		@keyframes fadeContent{
+			0%{ transform:translate(0,50px);opacity: 0; }
+			10%{ opacity: 0; }
 		}
 
 		&__image{
@@ -287,12 +314,13 @@ h3{
 		}
 
 		&__two{
-			padding: 31px 90px 31px 10px;
+			padding: 31px 100px 31px 10px;
 			grid-gap: 60px;
 			border-radius: 50px;
 		}
 
 		&__three{
+			padding: 50px 0 0;
 
 			&__title,
 			&__paragraph{
@@ -302,6 +330,10 @@ h3{
 				margin-left: auto;
 				margin-right: auto;
 			}
+		}
+
+		&__four{
+			margin: 175px 0 150px;
 		}
 
 
@@ -316,6 +348,19 @@ h3{
 			justify-content: center;
 			z-index: 0;
 			grid-gap: 30px;
+			animation: slideFeatureLeft 1s ease-out;
+			@keyframes slideFeatureLeft{
+				0%{ opacity: 0; transform: translate(-50px, 0); }
+				10%{ opacity: 0; }
+			}
+
+			&:nth-child(2n){
+				animation: slideFeatureRight 1s ease-out !important;
+				@keyframes slideFeatureRight{
+					0%{ opacity: 0; transform: translate(50px, 0); }
+					10%{ opacity: 0; }
+				}
+			}
 
 			&--left{
 				width: 45%;
@@ -339,8 +384,9 @@ h3{
 				bottom: 0;
 
 				&__arrow{
+					position: relative;
+					top: 2px;
 					margin-left: 20px;
-					vertical-align: middle;
 				}
 			}
 
@@ -360,6 +406,14 @@ h3{
 
 
 			/* Individual Sections */
+			&__one{
+				&__background-loop-two{
+					top: 13%;
+					right: 39%;
+					transform: rotate(179deg);
+				}
+			}
+
 			&__two{
 				&__background-loop{
 					top: initial;
@@ -383,6 +437,11 @@ h3{
 					bottom: 0;
 					right: 11%;
 					transform: rotate(179deg);
+				}
+				&__background-loop-two{
+					top: 5%;
+					right: 30%;
+					transform: rotate(8deg);
 				}
 			}
 		}
@@ -523,7 +582,7 @@ h3{
 			}
 
 			&__title{
-				margin-bottom: 50px;
+				margin-bottom: 30px;
 			}
 
 			&__link{
@@ -534,6 +593,7 @@ h3{
 		&__one{
 			&__paragraph{
 				padding: 65px 0 10px;
+				margin: 0;
 			}
 		}
 
