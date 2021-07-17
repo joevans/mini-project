@@ -4,23 +4,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mini Project</title>
+
 	<!-- Prevent HTML Blinking -->
 	<style type="text/css">body{opacity:0;}</style>
 </head>
 <body>
 	<header class="header content-width flex flex--center">
-		<nav class="header__nav small-text">
-			<a href="/" class="header__nav__logo flex">
-				<span>mini project seo friendly logo name</span>
+		<nav class="header__nav flex flex--center small-text">
+			<a href="/" class="header__nav__logo main__logo flex">
+				<span>DataWareHouse</span>
 			</a>
 			<a class="header__nav__link header__nav__link--active" href="">About</a>
 			<a class="header__nav__link" href="">Help</a>
 			<a class="header__nav__link" href="">Features</a>
 			<a class="header__nav__link" href="">Signup</a>
 		</nav>
-		<a href="" class="header__button">
+		<a href="" class="header__button button--shadow">
 			Request Demo
-			<svg class="header__button__arrow" width="22" height="16" viewBox="0 0 22 16" fill="none">
+			<svg class="button--shadow__arrow" width="22" height="16" viewBox="0 0 22 16" fill="none">
 				<path d="M15 15L21 8L15 1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 				<path d="M21 8H1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
@@ -33,7 +34,7 @@
 			<div class="main__section__one--left">
 				<h1 class="main__section__title main__section__one__title main__section--bottom-seperation">Save your data storage here.</h1>
 				<p class="main__section__one__paragraph main__section--bottom-seperation">Data Warehouse is a data storage area that has been tested for security, so you can store your data here safely but not be afraid of being stolen by others.</p>
-				<a class="main__section__button main__section__one__button button--purple" href="">Learn more</a>
+				<a class="main__section__button button--large button--purple" href="">Learn more</a>
 			</div>
 			<div class="main__section__one--right flex--relative">
 				<img class="main__section__image main__section__one__image" src="./src/images/first-section_image.png">
@@ -220,22 +221,83 @@
 	<hr class="divider--purple background-purple">
 	
 	<footer class="footer content-width">
-		<div>
-			<h2>Try for free!</h2>
-			<p>Get limited 1 week free try our features!</p>
+		<div class="footer__top flex flex--center">
+			<div class="footer__top__left">
+				<h2 class="footer__top__title">Try for free!</h2>
+				<p>Get limited 1 week free try our features!</p>
+			</div>
+			<div class="footer__top__right flex">
+				<a class="footer__top_button button--large button--pink" href="">Learn more</a>
+				<a href="" class="footer__top_button button--shadow">
+					Request Demo
+					<svg class="button--shadow__arrow" width="22" height="16" viewBox="0 0 22 16" fill="none">
+						<path d="M15 15L21 8L15 1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M21 8H1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
+			</div>
 		</div>
-		<a class="main__section__button main__section__one__button button--pink" href="">Learn more</a>
-		<a href="" class="header__button">
-			Request Demo
-			<svg class="header__button__arrow" width="22" height="16" viewBox="0 0 22 16" fill="none">
-				<path d="M15 15L21 8L15 1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-				<path d="M21 8H1" stroke="#9C69E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-			</svg>
-		</a>
+		<div class="footer__bottom flex">
+			<div class="footer__bottom__one">
+				<a href="/" class="footer__bottom__logo main__logo flex">
+					<span>DataWareHouse</span>
+				</a>
+				<span class="footer__bottom__logo__span logo-text">DataWareHouse</span>
+				<p class="footer__bottom__one__paragraph medium-text">Warehouse Society, 234 <br>Bahagia Ave Street PRBW 29281</p>
+				<p>info@warehouse.project <br>1-232-3434 (Main)</p>
+			</div>
+			<div class="footer__bottom__two footer__bottom__list">
+				<strong class="footer__bottom__list__title">
+					<a class="deep-blue-text" href="">About</a>
+				</strong>
+				<a class="footer__bottom__list__link gray-text" href="">Profile</a>
+				<a class="footer__bottom__list__link gray-text" href="">Features</a>
+				<a class="footer__bottom__list__link gray-text" class="footer__bottom__list__link" href="">Careers</a>
+				<a class="footer__bottom__list__link gray-text" href="">DW News</a>
+			</div>
+			<div class="footer__bottom__three footer__bottom__list">
+				<strong class="footer__bottom__list__title">
+					<a class="deep-blue-text" href="">Help</a>
+				</strong>
+				<a class="footer__bottom__list__link gray-text" href="">Support</a>
+				<a class="footer__bottom__list__link gray-text" href="">Sign up</a>
+				<a class="footer__bottom__list__link gray-text" href="">Guide</a>
+				<a class="footer__bottom__list__link gray-text" href="">Reports</a>
+				<a class="footer__bottom__list__link gray-text" href="">Q&amp;A</a>
+			</div>
+			<div class="footer__bottom__list">
+				<strong class="footer__bottom__list__title">
+					<a class="deep-blue-text" href="">Social Media</a>
+				</strong>
+				<div class="footer__bottom__socials flex">
+					<a href="">
+						<i class="footer__bottom__socials__item flex flex--center background-deep-blue">
+							<svg width="10" height="21" viewBox="0 0 10 21" fill="none">
+								<path d="M6.37001 20.6052V10.7015H9.20402L9.57959 7.28859H6.37001L6.37482 5.58041C6.37482 4.69028 6.4625 4.21332 7.78782 4.21332H9.55953V0.800049H6.72511C3.32053 0.800049 2.1222 2.45567 2.1222 5.23989V7.28898H0V10.7019H2.1222V20.6052H6.37001Z" fill="white"/>
+							</svg>
+						</i>
+					</a>
+					<a href="">
+						<i class="footer__bottom__socials__item flex flex--center background-deep-blue">
+							<svg width="19" height="16" viewBox="0 0 19 16" fill="none">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M8.90958 5.23722L8.86995 4.60731C8.75115 2.97477 9.79388 1.4836 11.4438 0.905186C12.051 0.699487 13.0805 0.673775 13.7537 0.853761C14.0177 0.930898 14.5193 1.18795 14.8756 1.41936L15.5224 1.84357L16.2352 1.62506C16.6312 1.50931 17.1592 1.31651 17.3967 1.18795C17.6211 1.07228 17.8191 1.00796 17.8191 1.04657C17.8191 1.26508 17.3307 2.01067 16.9216 2.42199C16.3672 3.00048 16.5256 3.0519 17.6475 2.66622C18.3207 2.4477 18.3338 2.4477 18.2019 2.69193C18.1226 2.82049 17.7135 3.27042 17.2779 3.68174C16.5387 4.38879 16.4992 4.46593 16.4992 5.05724C16.4992 5.96991 16.0504 7.8724 15.6016 8.91364C14.77 10.8675 12.9881 12.8857 11.2062 13.9012C8.69839 15.3281 5.35891 15.688 2.54748 14.8525C1.61034 14.5697 0 13.8498 0 13.7213C0 13.6827 0.488346 13.6313 1.08236 13.6185C2.32308 13.5928 3.5638 13.2585 4.61975 12.6672L5.33257 12.2559L4.51415 11.9859C3.35261 11.6002 2.30987 10.7133 2.04593 9.87774C1.96667 9.60779 1.99309 9.5949 2.73225 9.5949L3.49783 9.58208L2.85105 9.28643C2.08547 8.91364 1.38594 8.28372 1.04274 7.64099C0.79192 7.17824 0.475215 6.00844 0.5676 5.91849C0.59394 5.87996 0.871175 5.95702 1.18796 6.05987C2.09868 6.38124 2.21749 6.3041 1.68951 5.76421C0.699535 4.7873 0.39596 3.33466 0.871175 1.95924L1.09557 1.34222L1.96667 2.17776C3.74865 3.86173 5.84733 4.86443 8.24959 5.16009L8.90958 5.23722Z" fill="white"/>
+							</svg>
+						</i>
+					</a>
+					<a href="">
+						<i class="footer__bottom__socials__item flex flex--center background-deep-blue">
+							<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8.00179 4.50125C5.73162 4.50125 3.9005 6.27171 3.9005 8.46668C3.9005 10.6616 5.73162 12.4321 8.00179 12.4321C10.2719 12.4321 12.1031 10.6616 12.1031 8.46668C12.1031 6.27171 10.2719 4.50125 8.00179 4.50125ZM8.00179 11.0447C6.53475 11.0447 5.33542 9.88857 5.33542 8.46668C5.33542 7.04478 6.53118 5.88863 8.00179 5.88863C9.47239 5.88863 10.6682 7.04478 10.6682 8.46668C10.6682 9.88857 9.46882 11.0447 8.00179 11.0447ZM13.2274 4.33904C13.2274 4.85327 12.7991 5.26396 12.2708 5.26396C11.739 5.26396 11.3142 4.84982 11.3142 4.33904C11.3142 3.82826 11.7426 3.41412 12.2708 3.41412C12.7991 3.41412 13.2274 3.82826 13.2274 4.33904ZM15.9438 5.27777C15.8831 4.03879 15.5904 2.9413 14.6516 2.03709C13.7165 1.13287 12.5814 0.849876 11.2999 0.787755C9.97925 0.71528 6.02075 0.71528 4.70006 0.787755C3.4222 0.846425 2.28712 1.12942 1.34835 2.03364C0.409593 2.93785 0.120468 4.03533 0.0562186 5.27431C-0.0187395 6.55126 -0.0187395 10.3786 0.0562186 11.6556C0.116899 12.8946 0.409593 13.992 1.34835 14.8963C2.28712 15.8005 3.41863 16.0835 4.70006 16.1456C6.02075 16.2181 9.97925 16.2181 11.2999 16.1456C12.5814 16.0869 13.7165 15.8039 14.6516 14.8963C15.5868 13.992 15.8795 12.8946 15.9438 11.6556C16.0187 10.3786 16.0187 6.55471 15.9438 5.27777ZM14.2376 13.0257C13.9592 13.7021 13.4202 14.2233 12.717 14.4959C11.664 14.8997 9.16542 14.8065 8.00179 14.8065C6.83815 14.8065 4.33597 14.8963 3.28656 14.4959C2.58695 14.2267 2.04796 13.7056 1.76598 13.0257C1.34835 12.0076 1.44473 9.59177 1.44473 8.46668C1.44473 7.34158 1.35192 4.92229 1.76598 3.90764C2.04439 3.2312 2.58338 2.71007 3.28656 2.43743C4.33954 2.03364 6.83815 2.12682 8.00179 2.12682C9.16542 2.12682 11.6676 2.03709 12.717 2.43743C13.4166 2.70662 13.9556 3.22775 14.2376 3.90764C14.6552 4.92574 14.5588 7.34158 14.5588 8.46668C14.5588 9.59177 14.6552 12.0111 14.2376 13.0257Z" fill="white"/>
+							</svg>
+						</i>
+					</a>
+				</div>
+			</div>
+		</div>
 	</footer>
 
-
 	<script type="text/javascript" src="./dist/main.js"></script>
+
 	<!-- Prevent HTML Blinking -->
 	<style type="text/css">body{opacity:1;}</style>
 </body>
